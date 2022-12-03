@@ -239,10 +239,13 @@ const navCords = nav.getBoundingClientRect();
 //getting cocordinated from the rect thing for the white box for background
 const cords = {
   height: dropDownCords.height,
-  width: dropDownCords.width
+  width: dropDownCords.width,
+  top: dropDownCords.top - navCords.top,
+  left: dropDownCords.left - navCords.left
 };
 backgorund.style.setProperty("width", `${cords.width}px`)
 backgorund.style.setProperty("height", `${cords.height}px`)
+backgorund.style.setProperty("transform", `translate(${cords.left}px,${cords.top}px)`)
 }
 function mouseLeave (){
 // console.log("leave")
